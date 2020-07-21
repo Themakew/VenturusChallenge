@@ -79,13 +79,14 @@
 		5FA9DF2524C7625B0030FC0A /* VenturusChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				5FA9DF2624C7625B0030FC0A /* AppDelegate.swift */,
-				5FA9DF2824C7625B0030FC0A /* SceneDelegate.swift */,
-				5FA9DF2A24C7625B0030FC0A /* ViewController.swift */,
-				5FA9DF2C24C7625B0030FC0A /* Main.storyboard */,
-				5FA9DF2F24C7625F0030FC0A /* Assets.xcassets */,
-				5FA9DF3124C7625F0030FC0A /* LaunchScreen.storyboard */,
-				5FA9DF3424C7625F0030FC0A /* Info.plist */,
+				5FA9DF4824C769400030FC0A /* AppDelegate */,
+				5FA9DF4924C7695F0030FC0A /* Services */,
+				5FA9DF4A24C769710030FC0A /* Resources */,
+				5FA9DF4B24C769800030FC0A /* Extensions */,
+				5FA9DF4C24C7698C0030FC0A /* Utils */,
+				5FA9DF4D24C7699A0030FC0A /* Model */,
+				5FA9DF4E24C769A50030FC0A /* ViewModel */,
+				5FA9DF4F24C769B00030FC0A /* View */,
 			);
 			path = VenturusChallenge;
 			sourceTree = "<group>";
@@ -93,10 +94,113 @@
 		5FA9DF3C24C7625F0030FC0A /* VenturusChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FA9DF5624C76A4B0030FC0A /* ViewModelTests */,
+				5FA9DF5524C76A3E0030FC0A /* ModelTests */,
+				5FA9DF5424C76A280030FC0A /* ServiceTests */,
 				5FA9DF3D24C7625F0030FC0A /* VenturusChallengeTests.swift */,
 				5FA9DF3F24C7625F0030FC0A /* Info.plist */,
 			);
 			path = VenturusChallengeTests;
+			sourceTree = "<group>";
+		};
+		5FA9DF4824C769400030FC0A /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5FA9DF2624C7625B0030FC0A /* AppDelegate.swift */,
+				5FA9DF2824C7625B0030FC0A /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5FA9DF4924C7695F0030FC0A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5FA9DF4A24C769710030FC0A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FA9DF5324C76A0B0030FC0A /* Assets */,
+				5FA9DF3424C7625F0030FC0A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5FA9DF4B24C769800030FC0A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5FA9DF4C24C7698C0030FC0A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5FA9DF4D24C7699A0030FC0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FA9DF4E24C769A50030FC0A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5FA9DF4F24C769B00030FC0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5FA9DF5024C769CB0030FC0A /* Layout */,
+				5FA9DF2A24C7625B0030FC0A /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FA9DF5024C769CB0030FC0A /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				5FA9DF2C24C7625B0030FC0A /* Main.storyboard */,
+				5FA9DF3124C7625F0030FC0A /* LaunchScreen.storyboard */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		5FA9DF5324C76A0B0030FC0A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5FA9DF2F24C7625F0030FC0A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5FA9DF5424C76A280030FC0A /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServiceTests;
+			sourceTree = "<group>";
+		};
+		5FA9DF5524C76A3E0030FC0A /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		5FA9DF5624C76A4B0030FC0A /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
