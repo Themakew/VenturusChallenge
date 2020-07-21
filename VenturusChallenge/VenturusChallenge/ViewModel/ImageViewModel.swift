@@ -10,11 +10,11 @@ import Foundation
 
 // MARK: -
 
-class EventsListViewModel {
+class ImageViewModel {
     
     // MARK: - Properties -
     
-    var events = [ImageModel]()
+    var data = ImageModel()
     var httpManagerInstance: HTTPManager?
     
     // MARK: - Init -
@@ -27,7 +27,7 @@ class EventsListViewModel {
     
     // MARK: - Internal Methods -
     
-    func getImages(completion: @escaping (Result<[ImageModel], Error>) -> Void) {
+    func getImages(completion: @escaping (Result<ImageModel, Error>) -> Void) {
         httpManagerInstance?.executeRequest(urlString: EndPoints.images.path, completionBlock: { result in
             switch result {
             case .failure(let error):
@@ -35,8 +35,8 @@ class EventsListViewModel {
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {
-                    self.events = try decoder.decode([ImageModel].self, from: data)
-                    completion(.success(try decoder.decode([ImageModel].self, from: data)))
+                    self.data = try decoder.decode(ImageModel.self, from: data)
+                    completion(.success(try decoder.decode(ImageModel.self, from: data)))
                 } catch let error {
                     completion(.failure(error))
                 }
