@@ -23,6 +23,8 @@
 		5FA9DF6524C77D750030FC0A /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6424C77D750030FC0A /* ImageViewModel.swift */; };
 		5FA9DF6724C78D340030FC0A /* HTTPManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6624C78D340030FC0A /* HTTPManagerTests.swift */; };
 		5FA9DF6A24C78DA50030FC0A /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */; };
+		5FA9DF6D24C79AFE0030FC0A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6B24C79AFE0030FC0A /* ImageCollectionViewCell.swift */; };
+		5FA9DF6E24C79AFE0030FC0A /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6C24C79AFE0030FC0A /* ImageCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		5FA9DF6424C77D750030FC0A /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		5FA9DF6624C78D340030FC0A /* HTTPManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManagerTests.swift; sourceTree = "<group>"; };
 		5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		5FA9DF6B24C79AFE0030FC0A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		5FA9DF6C24C79AFE0030FC0A /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 			children = (
 				5FA9DF5024C769CB0030FC0A /* Layout */,
 				5FA9DF2A24C7625B0030FC0A /* ImageCollectionViewController.swift */,
+				5FA9DF6B24C79AFE0030FC0A /* ImageCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				5FA9DF2C24C7625B0030FC0A /* Main.storyboard */,
 				5FA9DF3124C7625F0030FC0A /* LaunchScreen.storyboard */,
+				5FA9DF6C24C79AFE0030FC0A /* ImageCollectionViewCell.xib */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 				5FA9DF3324C7625F0030FC0A /* LaunchScreen.storyboard in Resources */,
 				5FA9DF3024C7625F0030FC0A /* Assets.xcassets in Resources */,
 				5FA9DF2E24C7625B0030FC0A /* Main.storyboard in Resources */,
+				5FA9DF6E24C79AFE0030FC0A /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +361,7 @@
 				5FA9DF6524C77D750030FC0A /* ImageViewModel.swift in Sources */,
 				5FA9DF5B24C76D590030FC0A /* HTTPManager.swift in Sources */,
 				5FA9DF5924C76B7E0030FC0A /* EndPoints.swift in Sources */,
+				5FA9DF6D24C79AFE0030FC0A /* ImageCollectionViewCell.swift in Sources */,
 				5FA9DF5F24C76DF90030FC0A /* String+Extension.swift in Sources */,
 				5FA9DF2924C7625B0030FC0A /* SceneDelegate.swift in Sources */,
 				5FA9DF6324C778B80030FC0A /* ImageModel.swift in Sources */,

@@ -27,6 +27,8 @@ class ImageCollectionViewController: UIViewController {
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
         
+        imagesCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.cellIdentifier)
+        
         showActivity()
         getImagesFromService()
     }
@@ -71,7 +73,8 @@ extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
+        return cell
     }
     
 }
