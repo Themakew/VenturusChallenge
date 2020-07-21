@@ -14,7 +14,7 @@ class ImageViewModel {
     
     // MARK: - Properties -
     
-    var data = ImageModel()
+    var responseData = ImageModel()
     var httpManagerInstance: HTTPManager?
     
     // MARK: - Init -
@@ -35,7 +35,7 @@ class ImageViewModel {
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {
-                    self.data = try decoder.decode(ImageModel.self, from: data)
+                    self.responseData = try decoder.decode(ImageModel.self, from: data)
                     completion(.success(try decoder.decode(ImageModel.self, from: data)))
                 } catch let error {
                     completion(.failure(error))
