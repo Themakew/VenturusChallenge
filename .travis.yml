@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode11.5
+xcode_project: VenturusChallenge/VenturusChallenge.xcodeproj
+xcode_scheme: VenturusChallenge
+xcode_destination: platform=iOS Simulator,OS=13.5,name=iPhone 11 Pro
