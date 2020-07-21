@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  VenturusChallenge
 //
-//  Created by Foton on 21/07/20.
+//  Created by Ruyther on 21/07/20.
 //  Copyright © 2020 ruyther. All rights reserved.
 //
 

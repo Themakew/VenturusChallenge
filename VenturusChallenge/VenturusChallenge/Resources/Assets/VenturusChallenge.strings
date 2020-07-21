@@ -1,0 +1,10 @@
+/* 
+  VenturusChallenge.strings
+  VenturusChallenge
+
+  Created by Ruyther on 21/07/20.
+  Copyright © 2020 ruyther. All rights reserved.
+*/
+
+"service_error" = "Sistema indisponível, tente novamente.";
+"service_url_error" = "Url inválida, tente novamente.";
