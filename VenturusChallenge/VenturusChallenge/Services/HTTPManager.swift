@@ -98,7 +98,7 @@ class HTTPManager {
         urlRequest.httpMethod = type.rawValue
         
         urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("1ceddedc03a5d71", forHTTPHeaderField: "Client-ID")
+        urlRequest.setValue("Client-ID 1ceddedc03a5d71", forHTTPHeaderField: "Authorization")
         return urlRequest
     }
 }

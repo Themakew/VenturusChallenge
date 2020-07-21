@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5FA9DF2724C7625B0030FC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2624C7625B0030FC0A /* AppDelegate.swift */; };
 		5FA9DF2924C7625B0030FC0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2824C7625B0030FC0A /* SceneDelegate.swift */; };
-		5FA9DF2B24C7625B0030FC0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2A24C7625B0030FC0A /* ViewController.swift */; };
+		5FA9DF2B24C7625B0030FC0A /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2A24C7625B0030FC0A /* ImageCollectionViewController.swift */; };
 		5FA9DF2E24C7625B0030FC0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2C24C7625B0030FC0A /* Main.storyboard */; };
 		5FA9DF3024C7625F0030FC0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2F24C7625F0030FC0A /* Assets.xcassets */; };
 		5FA9DF3324C7625F0030FC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FA9DF3124C7625F0030FC0A /* LaunchScreen.storyboard */; };
@@ -19,6 +19,10 @@
 		5FA9DF5D24C76D9B0030FC0A /* VenturusChallenge.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FA9DF5C24C76D9B0030FC0A /* VenturusChallenge.strings */; };
 		5FA9DF5F24C76DF90030FC0A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF5E24C76DF90030FC0A /* String+Extension.swift */; };
 		5FA9DF6124C774320030FC0A /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6024C774320030FC0A /* URLSession+Extension.swift */; };
+		5FA9DF6324C778B80030FC0A /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6224C778B80030FC0A /* ImageModel.swift */; };
+		5FA9DF6524C77D750030FC0A /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6424C77D750030FC0A /* ImageViewModel.swift */; };
+		5FA9DF6724C78D340030FC0A /* HTTPManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6624C78D340030FC0A /* HTTPManagerTests.swift */; };
+		5FA9DF6A24C78DA50030FC0A /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +39,7 @@
 		5FA9DF2324C7625B0030FC0A /* VenturusChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenturusChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA9DF2624C7625B0030FC0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FA9DF2824C7625B0030FC0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5FA9DF2A24C7625B0030FC0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5FA9DF2A24C7625B0030FC0A /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		5FA9DF2D24C7625B0030FC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FA9DF2F24C7625F0030FC0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FA9DF3224C7625F0030FC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +52,10 @@
 		5FA9DF5C24C76D9B0030FC0A /* VenturusChallenge.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = VenturusChallenge.strings; sourceTree = "<group>"; };
 		5FA9DF5E24C76DF90030FC0A /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5FA9DF6024C774320030FC0A /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		5FA9DF6224C778B80030FC0A /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		5FA9DF6424C77D750030FC0A /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		5FA9DF6624C78D340030FC0A /* HTTPManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManagerTests.swift; sourceTree = "<group>"; };
+		5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,7 @@
 		5FA9DF3C24C7625F0030FC0A /* VenturusChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FA9DF6824C78D850030FC0A /* Mocks */,
 				5FA9DF5624C76A4B0030FC0A /* ViewModelTests */,
 				5FA9DF5524C76A3E0030FC0A /* ModelTests */,
 				5FA9DF5424C76A280030FC0A /* ServiceTests */,
@@ -159,6 +168,7 @@
 		5FA9DF4D24C7699A0030FC0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5FA9DF6224C778B80030FC0A /* ImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +176,7 @@
 		5FA9DF4E24C769A50030FC0A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5FA9DF6424C77D750030FC0A /* ImageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -174,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				5FA9DF5024C769CB0030FC0A /* Layout */,
-				5FA9DF2A24C7625B0030FC0A /* ViewController.swift */,
+				5FA9DF2A24C7625B0030FC0A /* ImageCollectionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +225,7 @@
 		5FA9DF5624C76A4B0030FC0A /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FA9DF6624C78D340030FC0A /* HTTPManagerTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -224,6 +236,14 @@
 				5FA9DF5824C76B7E0030FC0A /* EndPoints.swift */,
 			);
 			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		5FA9DF6824C78D850030FC0A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,13 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FA9DF2B24C7625B0030FC0A /* ViewController.swift in Sources */,
+				5FA9DF2B24C7625B0030FC0A /* ImageCollectionViewController.swift in Sources */,
 				5FA9DF2724C7625B0030FC0A /* AppDelegate.swift in Sources */,
 				5FA9DF6124C774320030FC0A /* URLSession+Extension.swift in Sources */,
+				5FA9DF6524C77D750030FC0A /* ImageViewModel.swift in Sources */,
 				5FA9DF5B24C76D590030FC0A /* HTTPManager.swift in Sources */,
 				5FA9DF5924C76B7E0030FC0A /* EndPoints.swift in Sources */,
 				5FA9DF5F24C76DF90030FC0A /* String+Extension.swift in Sources */,
 				5FA9DF2924C7625B0030FC0A /* SceneDelegate.swift in Sources */,
+				5FA9DF6324C778B80030FC0A /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +364,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA9DF6A24C78DA50030FC0A /* MockURLSession.swift in Sources */,
 				5FA9DF3E24C7625F0030FC0A /* VenturusChallengeTests.swift in Sources */,
+				5FA9DF6724C78D340030FC0A /* HTTPManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

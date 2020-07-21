@@ -15,7 +15,7 @@ extension String {
     // MARK: - Internal Methods -
     
     func text(comment: String = "", suffix: String = "") -> String {
-        return "\(NSLocalizedString(self, tableName: "IBMChallenge", bundle: Bundle.main, comment: comment))\(suffix)"
+        return "\(NSLocalizedString(self, tableName: "VenturusChallenge", bundle: Bundle.main, comment: comment))\(suffix)"
     }
     
     func isValidEmail() -> Bool {
