@@ -16,7 +16,6 @@ enum HTTPError: Error {
 }
 
 enum HTTPMethod: String {
-    case POST = "POST"
     case GET = "GET"
 }
 
@@ -97,7 +96,6 @@ class HTTPManager {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = type.rawValue
         
-        urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("Client-ID 1ceddedc03a5d71", forHTTPHeaderField: "Authorization")
         return urlRequest
     }

@@ -25,6 +25,7 @@
 		5FA9DF6A24C78DA50030FC0A /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */; };
 		5FA9DF6D24C79AFE0030FC0A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6B24C79AFE0030FC0A /* ImageCollectionViewCell.swift */; };
 		5FA9DF6E24C79AFE0030FC0A /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6C24C79AFE0030FC0A /* ImageCollectionViewCell.xib */; };
+		5FA9DF7024C8E6E70030FC0A /* ImageCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF6F24C8E6E70030FC0A /* ImageCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		5FA9DF6B24C79AFE0030FC0A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		5FA9DF6C24C79AFE0030FC0A /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		5FA9DF6F24C8E6E70030FC0A /* ImageCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				5FA9DF6424C77D750030FC0A /* ImageViewModel.swift */,
+				5FA9DF6F24C8E6E70030FC0A /* ImageCollectionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				5FA9DF5B24C76D590030FC0A /* HTTPManager.swift in Sources */,
 				5FA9DF5924C76B7E0030FC0A /* EndPoints.swift in Sources */,
 				5FA9DF6D24C79AFE0030FC0A /* ImageCollectionViewCell.swift in Sources */,
+				5FA9DF7024C8E6E70030FC0A /* ImageCollectionViewModel.swift in Sources */,
 				5FA9DF5F24C76DF90030FC0A /* String+Extension.swift in Sources */,
 				5FA9DF2924C7625B0030FC0A /* SceneDelegate.swift in Sources */,
 				5FA9DF6324C778B80030FC0A /* ImageModel.swift in Sources */,

@@ -16,10 +16,10 @@ struct ImageModel: Codable {
     
     struct Data: Codable {
         
-        var imageLink: String?
+        var imageCover: String?
         
         private enum CodingKeys: String, CodingKey {
-            case imageLink = "link"
+            case imageCover = "cover"
         }
     }
 }

@@ -27,7 +27,7 @@ class ImageCollectionViewController: UIViewController {
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
         
-        imagesCollectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.cellIdentifier)
+        imagesCollectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ImageCollectionViewCell.cellIdentifier)
         
         showActivity()
         getImagesFromService()
@@ -74,7 +74,16 @@ extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
+        let cellData = imageViewModel.responseData.data?[indexPath.row]
+        
+        if let cover = cellData?.imageCover, let url = URL(string: "https://i.imgur.com/" + cover + ".jpg") {
+            cell.getImageFromURL(url: url)
+        }
+        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
+    }
 }
