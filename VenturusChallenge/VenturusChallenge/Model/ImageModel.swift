@@ -29,6 +29,7 @@ struct ImageModel: Codable {
         struct Image: Codable {
             var link: String?
             var type: String?
+            var id: String?
         }
     }
 }

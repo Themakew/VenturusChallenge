@@ -82,9 +82,9 @@ class HTTPManager {
                     return
             }
 
-            if let jsonString = String(data: data ?? Data(), encoding: .utf8) {
-               print(jsonString)
-            }
+//            if let jsonString = String(data: data ?? Data(), encoding: .utf8) {
+//               print(jsonString)
+//            }
             completionBlock(.success(responseData))
         }
         task.resume()

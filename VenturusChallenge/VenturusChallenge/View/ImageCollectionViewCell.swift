@@ -18,8 +18,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var imageCollectionViewModel = ImageCollectionViewModel()
-    
-    var dataType: String?
+    private let emptyImage = UIImage(named: "empty_image")
     
     public static var cellIdentifier = "ImageCollectionViewCell"
     
@@ -37,18 +36,36 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         imageCollectionViewModel.task = nil
         imageView.image = nil
+        
+        activityIndicator.startAnimating()
     }
     
     // MARK: - Internal Methods -
 
-    func getImageFromURL(url: URL) {
-        activityIndicator.startAnimating()
-        imageCollectionViewModel.getData(from: url) { (data, response, error) in
-            guard let data = data, error == nil, !(self.dataType?.contains("mp4") ?? false) else {
-                self.setImage(image: UIImage(named: "empty_image"))
-                return
+    func getImageFromURL(url: URL, dataType: String?, id: String) {
+        if dataType?.contains("mp4") ?? false {
+            setImage(image: emptyImage)
+        } else {
+            if let image = Utils.getImageFromDevice(imageId: id, imageName: url.absoluteString, storageType: .fileSystem) {
+                setImage(image: image)
+            } else {
+                imageCollectionViewModel.getData(from: url) { (data, response, error) in
+                    guard let data = data, error == nil, !(dataType?.contains("mp4") ?? false) else {
+                        self.setImage(image: self.emptyImage)
+                        return
+                    }
+                    
+                    if let imageData = UIImage(data: data) {
+                        if url.absoluteString.contains("png") {
+                            Utils.savePNGImageInDevice(image: imageData, imageName: id, storageType: .fileSystem)
+                        } else {
+                            Utils.saveJPEGImageInDevice(image: imageData, imageName: id, storageType: .fileSystem)
+                        }
+                    }
+                    
+                    self.setImage(image: UIImage(data: data))
+                }
             }
-            self.setImage(image: UIImage(data: data))
         }
     }
     

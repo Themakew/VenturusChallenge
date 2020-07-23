@@ -79,9 +79,8 @@ extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
         let cellData = imageViewModel.imageList[indexPath.row]
         
-        cell.dataType = cellData.type
-        if let url = URL(string: cellData.link ?? "") {
-            cell.getImageFromURL(url: url)
+        if let url = URL(string: cellData.link ?? ""), let dataType = cellData.type, let id = cellData.id {
+            cell.getImageFromURL(url: url, dataType: dataType, id: id)
         }
         
         return cell
@@ -110,9 +109,8 @@ extension ImageCollectionViewController: UICollectionViewDataSourcePrefetching {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
             let cellData = imageViewModel.imageList[indexPath.row]
             
-            cell.dataType = cellData.type
-            if let url = URL(string: cellData.link ?? "") {
-                cell.getImageFromURL(url: url)
+            if let url = URL(string: cellData.link ?? ""), let dataType = cellData.type, let id = cellData.id {
+                cell.getImageFromURL(url: url, dataType: dataType, id: id)
             }
         }
     }
