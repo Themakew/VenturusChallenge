@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.23137254901960785" green="0.53333333333333333" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.82505691049999996" green="0.88559603689999999" blue="0.94510084390000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F1T-wi-Nt1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KPF-M6-oJb"/>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="1024" height="1024"/>
+        <image name="icon" width="512" height="512"/>
     </resources>
 </document>

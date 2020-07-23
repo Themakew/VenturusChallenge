@@ -26,10 +26,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.08).cgColor
+        imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOffset = .zero
-        imageView.layer.shadowRadius = 10.0
-        imageView.layer.cornerRadius = 4.0
+        imageView.layer.shadowRadius = 4.0
+        imageView.layer.cornerRadius = 10.0
+        imageView.layer.shadowOpacity = 0.2
     }
     
     override func prepareForReuse() {
