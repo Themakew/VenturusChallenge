@@ -48,6 +48,7 @@ class ImageCollectionViewController: UIViewController {
                 }
             } catch let error {
                 print(error.localizedDescription)
+                Utils.alert(self, error.localizedDescription)
             }
         }
     }
@@ -78,7 +79,7 @@ extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
         let cellData = imageViewModel.responseData.data?[indexPath.row]
         
-        if let coverString = cellData?.imageCover, let url = URL(string: "https://i.imgur.com/" + coverString + ".jpg") {
+        if let coverString = cellData?.imageCover, let url = URL(string: urlBase + coverString + ".jpg") {
             cell.getImageFromURL(url: url)
         }
         
@@ -87,5 +88,17 @@ extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout -
+
+extension ImageCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let cellWidth: CGFloat = 100
+        let numberOfCells: CGFloat = 3
+        let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
+
+        return UIEdgeInsets(top: 15, left: edgeInsets, bottom: 0, right: edgeInsets)
     }
 }
