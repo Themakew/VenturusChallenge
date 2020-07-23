@@ -46,7 +46,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
                 self.setImage(image: UIImage(named: "empty_image"))
                 return
             }
-            
             self.setImage(image: UIImage(data: data))
         }
     }

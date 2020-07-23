@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="91Q-bN-V5l">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o6r-vX-8A5">
                                     <size key="itemSize" width="100" height="100"/>
@@ -26,12 +26,36 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NUJ-Ta-ueB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.53333333329999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1Yy-TS-iRu"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiS-tG-Cz7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="af9-WV-gV5"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.23137254900000001" green="0.53333333329999999" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <items>
+                                    <navigationItem title="Fotos" id="QuR-DB-Fdt"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="91Q-bN-V5l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3DR-fE-VSs"/>
-                            <constraint firstItem="91Q-bN-V5l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Oq-zD-bKZ"/>
+                            <constraint firstItem="91Q-bN-V5l" firstAttribute="top" secondItem="SiS-tG-Cz7" secondAttribute="bottom" id="4gU-3X-07C"/>
+                            <constraint firstItem="NUJ-Ta-ueB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CWg-7K-FR0"/>
+                            <constraint firstItem="NUJ-Ta-ueB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dyu-s7-o47"/>
+                            <constraint firstAttribute="trailing" secondItem="NUJ-Ta-ueB" secondAttribute="trailing" id="Ezf-Ag-1K0"/>
+                            <constraint firstItem="SiS-tG-Cz7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hy8-OC-vIC"/>
+                            <constraint firstItem="SiS-tG-Cz7" firstAttribute="top" secondItem="NUJ-Ta-ueB" secondAttribute="bottom" id="Pkn-5E-Mgg"/>
                             <constraint firstItem="91Q-bN-V5l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RKa-ed-k6h"/>
+                            <constraint firstItem="SiS-tG-Cz7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hga-Ng-BO1"/>
                             <constraint firstAttribute="bottom" secondItem="91Q-bN-V5l" secondAttribute="bottom" id="zYa-jx-RC7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -72,7 +72,7 @@ class ImageCollectionViewController: UIViewController {
 
 extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        imageViewModel.responseData.data?.count ?? 0
+        return imageViewModel.responseData.data?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
