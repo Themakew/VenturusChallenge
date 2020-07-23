@@ -33,6 +33,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
         activityIndicator.startAnimating()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
+    
     // MARK: - Internal Methods -
 
     func getImageFromURL(url: URL) {

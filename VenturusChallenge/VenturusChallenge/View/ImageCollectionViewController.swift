@@ -19,6 +19,8 @@ class ImageCollectionViewController: UIViewController {
     
     private var imageViewModel = ImageViewModel(httpManager: HTTPManager(session: URLSession.shared))
     
+    private let urlBase = "https://i.imgur.com/"
+    
     // MARK: - View Lifecycle -
     
     override func viewDidLoad() {
@@ -76,7 +78,7 @@ extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
         let cellData = imageViewModel.responseData.data?[indexPath.row]
         
-        if let cover = cellData?.imageCover, let url = URL(string: "https://i.imgur.com/" + cover + ".jpg") {
+        if let coverString = cellData?.imageCover, let url = URL(string: "https://i.imgur.com/" + coverString + ".jpg") {
             cell.getImageFromURL(url: url)
         }
         
