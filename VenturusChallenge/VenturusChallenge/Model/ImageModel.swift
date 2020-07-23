@@ -23,10 +23,12 @@ struct ImageModel: Codable {
         private enum CodingKeys: String, CodingKey {
             case imageCover = "cover"
             case type
+            case images
         }
         
         struct Image: Codable {
             var link: String?
+            var type: String?
         }
     }
 }

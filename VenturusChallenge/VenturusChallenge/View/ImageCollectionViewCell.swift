@@ -19,6 +19,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     private var imageCollectionViewModel = ImageCollectionViewModel()
     
+    var dataType: String?
+    
     public static var cellIdentifier = "ImageCollectionViewCell"
     
     // MARK: - View Lifecycle -
@@ -29,20 +31,20 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageView.layer.shadowOffset = .zero
         imageView.layer.shadowRadius = 10.0
         imageView.layer.cornerRadius = 4.0
-        
-        activityIndicator.startAnimating()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        imageCollectionViewModel.task = nil
         imageView.image = nil
     }
     
     // MARK: - Internal Methods -
 
     func getImageFromURL(url: URL) {
+        activityIndicator.startAnimating()
         imageCollectionViewModel.getData(from: url) { (data, response, error) in
-            guard let data = data, error == nil else {
+            guard let data = data, error == nil, !(self.dataType?.contains("mp4") ?? false) else {
                 self.setImage(image: UIImage(named: "empty_image"))
                 return
             }

@@ -16,6 +16,7 @@ class ImageViewModel {
     
     var responseData = ImageModel()
     var httpManagerInstance: HTTPManager?
+    var imageList: [ImageModel.Data.Image] = []
     
     // MARK: - Init -
     
@@ -36,12 +37,24 @@ class ImageViewModel {
                 let decoder = JSONDecoder()
                 do {
                     self.responseData = try decoder.decode(ImageModel.self, from: data)
+                    self.setImageList(responseData: self.responseData)
                     completion(.success(try decoder.decode(ImageModel.self, from: data)))
                 } catch let error {
                     completion(.failure(error))
                 }
             }
         })
+    }
+    
+    private func setImageList(responseData: ImageModel) {
+        for index in 0..<(responseData.data?.count ?? 0) {
+            if let images = responseData.data?[index].images?.count, images != 0 {
+                for indexTwo in 0..<(images) {
+                    imageList.append(responseData.data?[index].images?[indexTwo] ?? ImageModel.Data.Image())
+                }
+            }
+            
+        }
     }
 
 }

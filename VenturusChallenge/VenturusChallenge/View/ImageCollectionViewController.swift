@@ -18,7 +18,6 @@ class ImageCollectionViewController: UIViewController {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     private var imageViewModel = ImageViewModel(httpManager: HTTPManager(session: URLSession.shared))
-    
     private let urlBase = "https://i.imgur.com/"
     
     // MARK: - View Lifecycle -
@@ -28,6 +27,7 @@ class ImageCollectionViewController: UIViewController {
         
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
+        imagesCollectionView.prefetchDataSource = self
         
         imagesCollectionView.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ImageCollectionViewCell.cellIdentifier)
         
@@ -72,14 +72,15 @@ class ImageCollectionViewController: UIViewController {
 
 extension ImageCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageViewModel.responseData.data?.count ?? 0
+        return imageViewModel.imageList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
-        let cellData = imageViewModel.responseData.data?[indexPath.row]
+        let cellData = imageViewModel.imageList[indexPath.row]
         
-        if let coverString = cellData?.imageCover, let url = URL(string: urlBase + coverString + ".jpg") {
+        cell.dataType = cellData.type
+        if let url = URL(string: cellData.link ?? "") {
             cell.getImageFromURL(url: url)
         }
         
@@ -100,5 +101,19 @@ extension ImageCollectionViewController: UICollectionViewDelegateFlowLayout {
         let edgeInsets = (self.view.frame.size.width - (numberOfCells * cellWidth)) / (numberOfCells + 1)
 
         return UIEdgeInsets(top: 15, left: edgeInsets, bottom: 0, right: edgeInsets)
+    }
+}
+
+extension ImageCollectionViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.cellIdentifier, for: indexPath) as! ImageCollectionViewCell
+            let cellData = imageViewModel.imageList[indexPath.row]
+            
+            cell.dataType = cellData.type
+            if let url = URL(string: cellData.link ?? "") {
+                cell.getImageFromURL(url: url)
+            }
+        }
     }
 }
