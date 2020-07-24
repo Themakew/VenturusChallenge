@@ -38,6 +38,7 @@ protocol URLSessionProtocol {
     typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
     
     func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
+    func dataTask(with request: URL, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
 }
 
 protocol URLSessionDataTaskProtocol {
@@ -51,6 +52,8 @@ class HTTPManager {
     // MARK: - Properties -
     
     private let session: URLSessionProtocol
+    
+    var task: URLSessionDataTaskProtocol?
     
     // MARK: - Init -
     
@@ -82,12 +85,34 @@ class HTTPManager {
                     return
             }
 
-//            if let jsonString = String(data: data ?? Data(), encoding: .utf8) {
-//               print(jsonString)
-//            }
             completionBlock(.success(responseData))
         }
         task.resume()
+    }
+    
+    func getData(urlString: String, completionBlock: @escaping (Result<Data, Error>) -> Void) {
+        
+        guard let url = URL(string: urlString) else {
+            completionBlock(.failure(HTTPError.invalidURL))
+            return
+        }
+        
+        task = session.dataTask(with: url) { data, response, error in
+            guard error == nil else {
+                completionBlock(.failure(error!))
+                return
+            }
+
+            guard let responseData = data,
+                let httpResponse = response as? HTTPURLResponse,
+                200 ..< 300 ~= httpResponse.statusCode else {
+                    completionBlock(.failure(HTTPError.invalidResponse))
+                    return
+            }
+
+            completionBlock(.success(responseData))
+        }
+        task?.resume()
     }
     
     // MARK: - Private Methods -

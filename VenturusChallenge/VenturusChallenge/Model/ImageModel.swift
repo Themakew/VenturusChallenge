@@ -17,12 +17,10 @@ struct ImageModel: Codable {
     struct Data: Codable {
         
         var imageCover: String?
-        var type: String?
         var images: [Image]?
         
         private enum CodingKeys: String, CodingKey {
             case imageCover = "cover"
-            case type
             case images
         }
         

@@ -2,7 +2,7 @@
 //  Utils.swift
 //  VenturusChallenge
 //
-//  Created by Foton on 22/07/20.
+//  Created by Ruyther on 22/07/20.
 //  Copyright © 2020 ruyther. All rights reserved.
 //
 

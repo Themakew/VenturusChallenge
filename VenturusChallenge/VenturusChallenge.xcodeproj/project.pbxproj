@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F02584A24CA604D0097EBE0 /* ImageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02584924CA604D0097EBE0 /* ImageViewModelTests.swift */; };
+		5F02584C24CA60C40097EBE0 /* HTTPManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02584B24CA60C40097EBE0 /* HTTPManagerMock.swift */; };
+		5F02584E24CA6A890097EBE0 /* ImageCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F02584D24CA6A890097EBE0 /* ImageCollectionViewModelTests.swift */; };
 		5FA9DF2724C7625B0030FC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2624C7625B0030FC0A /* AppDelegate.swift */; };
 		5FA9DF2924C7625B0030FC0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2824C7625B0030FC0A /* SceneDelegate.swift */; };
 		5FA9DF2B24C7625B0030FC0A /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA9DF2A24C7625B0030FC0A /* ImageCollectionViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F02584924CA604D0097EBE0 /* ImageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModelTests.swift; sourceTree = "<group>"; };
+		5F02584B24CA60C40097EBE0 /* HTTPManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPManagerMock.swift; sourceTree = "<group>"; };
+		5F02584D24CA6A890097EBE0 /* ImageCollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewModelTests.swift; sourceTree = "<group>"; };
 		5FA9DF2324C7625B0030FC0A /* VenturusChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenturusChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA9DF2624C7625B0030FC0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FA9DF2824C7625B0030FC0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +128,6 @@
 			children = (
 				5FA9DF6824C78D850030FC0A /* Mocks */,
 				5FA9DF5624C76A4B0030FC0A /* ViewModelTests */,
-				5FA9DF5524C76A3E0030FC0A /* ModelTests */,
 				5FA9DF5424C76A280030FC0A /* ServiceTests */,
 				5FA9DF3D24C7625F0030FC0A /* VenturusChallengeTests.swift */,
 				5FA9DF3F24C7625F0030FC0A /* Info.plist */,
@@ -223,21 +228,16 @@
 		5FA9DF5424C76A280030FC0A /* ServiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FA9DF6624C78D340030FC0A /* HTTPManagerTests.swift */,
 			);
 			path = ServiceTests;
-			sourceTree = "<group>";
-		};
-		5FA9DF5524C76A3E0030FC0A /* ModelTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ModelTests;
 			sourceTree = "<group>";
 		};
 		5FA9DF5624C76A4B0030FC0A /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
-				5FA9DF6624C78D340030FC0A /* HTTPManagerTests.swift */,
+				5F02584924CA604D0097EBE0 /* ImageViewModelTests.swift */,
+				5F02584D24CA6A890097EBE0 /* ImageCollectionViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -254,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				5FA9DF6924C78DA50030FC0A /* MockURLSession.swift */,
+				5F02584B24CA60C40097EBE0 /* HTTPManagerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -380,8 +381,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F02584E24CA6A890097EBE0 /* ImageCollectionViewModelTests.swift in Sources */,
 				5FA9DF6A24C78DA50030FC0A /* MockURLSession.swift in Sources */,
 				5FA9DF3E24C7625F0030FC0A /* VenturusChallengeTests.swift in Sources */,
+				5F02584A24CA604D0097EBE0 /* ImageViewModelTests.swift in Sources */,
+				5F02584C24CA60C40097EBE0 /* HTTPManagerMock.swift in Sources */,
 				5FA9DF6724C78D340030FC0A /* HTTPManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

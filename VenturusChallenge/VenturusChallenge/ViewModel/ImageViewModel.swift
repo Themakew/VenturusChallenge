@@ -53,7 +53,6 @@ class ImageViewModel {
                     imageList.append(responseData.data?[index].images?[indexTwo] ?? ImageModel.Data.Image())
                 }
             }
-            
         }
     }
 

@@ -17,7 +17,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    private var imageCollectionViewModel = ImageCollectionViewModel()
+    private var imageCollectionViewModel = ImageCollectionViewModel(httpManager: HTTPManager(session: URLSession.shared))
     private let emptyImage = UIImage(named: "empty_image")
     
     public static var cellIdentifier = "ImageCollectionViewCell"
@@ -43,28 +43,34 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Internal Methods -
 
-    func getImageFromURL(url: URL, dataType: String?, id: String) {
+    func getImageFromURL(url: String, dataType: String?, id: String) {
         if dataType?.contains("mp4") ?? false {
             setImage(image: emptyImage)
         } else {
-            if let image = Utils.getImageFromDevice(imageId: id, imageName: url.absoluteString, storageType: .fileSystem) {
+            if let image = Utils.getImageFromDevice(imageId: id, imageName: url, storageType: .fileSystem) {
                 setImage(image: image)
             } else {
-                imageCollectionViewModel.getData(from: url) { (data, response, error) in
-                    guard let data = data, error == nil, !(dataType?.contains("mp4") ?? false) else {
-                        self.setImage(image: self.emptyImage)
-                        return
-                    }
-                    
-                    if let imageData = UIImage(data: data) {
-                        if url.absoluteString.contains("png") {
-                            Utils.savePNGImageInDevice(image: imageData, imageName: id, storageType: .fileSystem)
-                        } else {
-                            Utils.saveJPEGImageInDevice(image: imageData, imageName: id, storageType: .fileSystem)
+                imageCollectionViewModel.getData(from: url) { result in
+                    do {
+                        let responseData = try result.get()
+                        
+                        guard !(dataType?.contains("mp4") ?? false) else {
+                            self.setImage(image: self.emptyImage)
+                            return
                         }
+                        
+                        if let imageData = UIImage(data: responseData) {
+                            if url.contains("png") {
+                                Utils.savePNGImageInDevice(image: imageData, imageName: id, storageType: .fileSystem)
+                            } else {
+                                Utils.saveJPEGImageInDevice(image: imageData, imageName: id, storageType: .fileSystem)
+                            }
+                        }
+                        
+                        self.setImage(image: UIImage(data: responseData))
+                    } catch let error {
+                        print(error.localizedDescription)
                     }
-                    
-                    self.setImage(image: UIImage(data: data))
                 }
             }
         }

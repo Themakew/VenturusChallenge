@@ -10,24 +10,30 @@ import Foundation
 
 class ImageCollectionViewModel {
     
-    var task: URLSessionDataTask?
+    // MARK: - Properties -
+    
+    var httpManagerInstance: HTTPManager?
+    var task: URLSessionDataTaskProtocol?
+    
+    // MARK: - Init -
+    
+    init(httpManager: HTTPManager?) {
+        if let instance = httpManager {
+            httpManagerInstance = instance
+            task = httpManagerInstance?.task
+        }
+    }
     
     // MARK: - Internal Methods -
     
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    if error == nil {
-                        completion(data, response, nil)
-                    } else {
-                        completion(data, response, error)
-                    }
-                } else {
-                    completion(data, response, NSError(domain: "", code: httpResponse.statusCode, userInfo: nil))
-                }
+    func getData(from url: String, completion: @escaping (Result<Data, Error>) -> ()) {
+        httpManagerInstance?.getData(urlString: url, completionBlock: { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                completion(.success(data))
             }
-        }
-        task?.resume()
+        })
     }
 }
